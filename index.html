@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montana Stream</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Global header gets injected here -->
+  <div id="site-header"></div>
+
+  <main class="hero">
+    <!-- Wireframe scene: mountains, pines, animated river -->
+    <svg class="scene" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <!-- Animated river pattern -->
+        <pattern id="riverFlow" x="0" y="0" width="120" height="40" patternUnits="userSpaceOnUse">
+          <path d="M0,20 Q30,5 60,20 T120,20" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.55"/>
+          <path d="M0,28 Q30,13 60,28 T120,28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+          <path d="M0,12 Q30,-3 60,12 T120,12" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+          <animateTransform
+            attributeName="patternTransform"
+            type="translate"
+            from="0 0"
+            to="-120 0"
+            dur="6s"
+            repeatCount="indefinite"/>
+        </pattern>
+
+        <!-- Secondary ripple layer for depth -->
+        <pattern id="riverRipple" x="0" y="0" width="80" height="30" patternUnits="userSpaceOnUse">
+          <path d="M0,15 Q20,8 40,15 T80,15" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.25"/>
+          <animateTransform
+            attributeName="patternTransform"
+            type="translate"
+            from="-80 0"
+            to="0 0"
+            dur="9s"
+            repeatCount="indefinite"/>
+        </pattern>
+      </defs>
+
+      <!-- Distant back mountains -->
+      <g class="mountains-back" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round">
+        <polyline points="-20,360 120,230 220,300 340,200 470,290 600,210 740,280 870,220 1010,290 1140,230 1220,290"/>
+      </g>
+
+      <!-- Mid mountains -->
+      <g class="mountains-mid" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round">
+        <polyline points="-20,430 80,340 180,400 290,300 400,390 520,320 640,400 760,330 880,410 1000,340 1120,400 1220,360"/>
+        <!-- Snow cap lines -->
+        <polyline points="270,315 290,300 310,315" opacity="0.6"/>
+        <polyline points="500,335 520,320 540,335" opacity="0.6"/>
+        <polyline points="740,345 760,330 780,345" opacity="0.6"/>
+      </g>
+
+      <!-- Front mountains -->
+      <g class="mountains-front" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linejoin="round">
+        <polyline points="-20,500 100,420 220,490 360,380 500,480 640,400 800,490 940,410 1080,490 1220,440"/>
+        <polyline points="340,395 360,380 380,395" opacity="0.7"/>
+        <polyline points="620,415 640,400 660,415" opacity="0.7"/>
+        <polyline points="920,425 940,410 960,425" opacity="0.7"/>
+      </g>
+
+      <!-- River banks -->
+      <g class="river-banks" stroke="currentColor" stroke-width="2" fill="none">
+        <path d="M-20,540 C 200,520 350,560 600,545 C 850,530 1000,565 1220,545"/>
+        <path d="M-20,640 C 200,620 380,660 600,645 C 820,630 1000,665 1220,645"/>
+      </g>
+
+      <!-- River water with animated pattern -->
+      <path class="river-water"
+            d="M-20,540 C 200,520 350,560 600,545 C 850,530 1000,565 1220,545
+               L 1220,645 C 1000,665 820,630 600,645 C 380,660 200,620 -20,640 Z"
+            fill="url(#riverFlow)" />
+      <path class="river-water-ripple"
+            d="M-20,540 C 200,520 350,560 600,545 C 850,530 1000,565 1220,545
+               L 1220,645 C 1000,665 820,630 600,645 C 380,660 200,620 -20,640 Z"
+            fill="url(#riverRipple)" />
+
+      <!-- Pine trees: left cluster -->
+      <g class="pines" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Tree 1 -->
+        <g transform="translate(80,500)">
+          <line x1="0" y1="0" x2="0" y2="-70"/>
+          <polyline points="-18,-15 0,-35 18,-15"/>
+          <polyline points="-22,-30 0,-50 22,-30"/>
+          <polyline points="-16,-50 0,-68 16,-50"/>
+        </g>
+        <!-- Tree 2 -->
+        <g transform="translate(140,510)">
+          <line x1="0" y1="0" x2="0" y2="-90"/>
+          <polyline points="-22,-20 0,-45 22,-20"/>
+          <polyline points="-26,-40 0,-65 26,-40"/>
+          <polyline points="-20,-62 0,-85 20,-62"/>
+        </g>
+        <!-- Tree 3 -->
+        <g transform="translate(200,505)">
+          <line x1="0" y1="0" x2="0" y2="-60"/>
+          <polyline points="-15,-12 0,-28 15,-12"/>
+          <polyline points="-18,-25 0,-42 18,-25"/>
+          <polyline points="-13,-42 0,-58 13,-42"/>
+        </g>
+      </g>
+
+      <!-- Pine trees: right cluster -->
+      <g class="pines" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <g transform="translate(950,505)">
+          <line x1="0" y1="0" x2="0" y2="-65"/>
+          <polyline points="-16,-13 0,-32 16,-13"/>
+          <polyline points="-20,-28 0,-48 20,-28"/>
+          <polyline points="-14,-46 0,-62 14,-46"/>
+        </g>
+        <g transform="translate(1010,510)">
+          <line x1="0" y1="0" x2="0" y2="-85"/>
+          <polyline points="-22,-18 0,-42 22,-18"/>
+          <polyline points="-26,-38 0,-62 26,-38"/>
+          <polyline points="-20,-60 0,-82 20,-60"/>
+        </g>
+        <g transform="translate(1080,503)">
+          <line x1="0" y1="0" x2="0" y2="-55"/>
+          <polyline points="-14,-12 0,-26 14,-12"/>
+          <polyline points="-17,-23 0,-40 17,-23"/>
+          <polyline points="-12,-40 0,-53 12,-40"/>
+        </g>
+        <g transform="translate(1140,508)">
+          <line x1="0" y1="0" x2="0" y2="-72"/>
+          <polyline points="-18,-15 0,-35 18,-15"/>
+          <polyline points="-22,-32 0,-52 22,-32"/>
+          <polyline points="-16,-52 0,-70 16,-52"/>
+        </g>
+      </g>
+
+      <!-- Foreground pines on the riverbank -->
+      <g class="pines pines-front" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <g transform="translate(40,670)">
+          <line x1="0" y1="0" x2="0" y2="-110"/>
+          <polyline points="-28,-25 0,-55 28,-25"/>
+          <polyline points="-32,-50 0,-80 32,-50"/>
+          <polyline points="-24,-78 0,-105 24,-78"/>
+        </g>
+        <g transform="translate(1170,675)">
+          <line x1="0" y1="0" x2="0" y2="-100"/>
+          <polyline points="-26,-22 0,-50 26,-22"/>
+          <polyline points="-30,-46 0,-74 30,-46"/>
+          <polyline points="-22,-72 0,-95 22,-72"/>
+        </g>
+      </g>
+
+      <!-- Sun / moon outline -->
+      <circle class="sun" cx="900" cy="180" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+    </svg>
+
+    <!-- Centered "Coming Soon!" text -->
+    <div class="coming-soon">
+      <h1>Coming Soon!</h1>
+      <p class="tagline">Montana Stream</p>
+    </div>
+  </main>
+
+  <!-- Global footer gets injected here -->
+  <div id="site-footer"></div>
+
+  <script src="js/include.js"></script>
+</body>
+</html>
