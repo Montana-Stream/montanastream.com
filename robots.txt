@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://montanastream.com/sitemap.xml

@@ -1,0 +1,18 @@
+# Montana Stream
+
+> Montana Stream is a video and content brand sharing stories from the mountains, rivers, and trails of Montana. Site is currently pre-launch ("Coming Soon").
+
+## Pages
+
+- [Home](https://montanastream.com/): Landing page with launch announcement.
+- [Videos](https://montanastream.com/videos.html): Video content from the Montana Stream channel (coming soon).
+- [Affiliates](https://montanastream.com/affiliates.html): Partner brands and gear recommendations (coming soon).
+- [About](https://montanastream.com/about.html): About Montana Stream.
+
+## Social
+
+- Facebook, Instagram, Threads, X, TikTok, YouTube — links available in the site footer.
+
+## Contact
+
+- Website: https://montanastream.com

@@ -1,0 +1,14 @@
+# ads.txt for montanastream.com
+#
+# This file is currently empty because Montana Stream is not yet running
+# programmatic advertising. When you sign up with an ad network (Google
+# AdSense, Mediavine, Raptive/AdThrive, etc.) they will give you a line
+# in the format:
+#
+#   <ad-system-domain>, <publisher-id>, <DIRECT|RESELLER>, <certification-id>
+#
+# Example (Google AdSense — replace pub-XXXX with your real ID):
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+#
+# Add one line per authorized seller. Until then, you can leave this file
+# in place as a placeholder or delete it — both are fine.
